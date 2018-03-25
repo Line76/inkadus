@@ -1,0 +1,8 @@
+.navbar {
+  height: $navbar-height;
+
+  .navbar-brand {
+    font-size: 1.7rem;
+    background-color: darken($purple, 10%);
+  }
+}

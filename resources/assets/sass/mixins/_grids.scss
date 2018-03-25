@@ -1,0 +1,3 @@
+@mixin grid-size($grid-nb-columns) {
+  grid-template-columns: repeat($grid-nb-columns, 1fr);
+}

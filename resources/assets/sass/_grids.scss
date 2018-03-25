@@ -1,0 +1,10 @@
+.grid {
+  display: grid;
+}
+
+.grid-col-1 { @include grid-size(1) }
+.grid-col-2 { @include grid-size(2) }
+.grid-col-3 { @include grid-size(3) }
+.grid-col-4 { @include grid-size(4) }
+.grid-col-5 { @include grid-size(5) }
+.grid-col-6 { @include grid-size(6) }
