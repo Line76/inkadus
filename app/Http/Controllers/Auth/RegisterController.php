@@ -145,7 +145,7 @@ class RegisterController extends Controller {
         $user->confirmed_token = null;
         $user->save();
 
-        session()->flash('success', 'Votre compte est maintenant confirmé');
+        session()->flash('success', 'Votre compte est maintenant validé ! A bientôt pour le lancement.');
         return redirect()->route('home');
     }
 }
