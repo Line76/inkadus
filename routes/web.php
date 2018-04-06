@@ -12,29 +12,32 @@
 */
 
 Auth::routes();
+Route::get('login', function() {
+    return abort('404');
+});
+Route::get('register/finished', 'Auth\RegisterController@finished');
+Route::get('register/notify', 'Auth\RegisterController@notifyAgain')->name('register.notify');
+Route::get('register/confirm/{email}/{token}', 'Auth\RegisterController@confirm')->name('register.confirm');
 
-//Route::get('/', function() {
-//    return view('welcome');
-//})->name('home');
 Route::get('/', 'HomeController@index')->name('home');
 
-Route::namespace('Dashboard')->name('dashboard')->prefix('dashboard')->middleware('auth')->group(function () {
-    Route::get('/', 'DashboardController@index');
-
-    Route::namespace('Profile')->name('.profile')->prefix('profile')->group(function () {
-        Route::get('/', 'ProfileController@index');
-//        Route::get('edit', 'ProfileController@edit')->name('.edit');
-        Route::match(['put', 'patch'], 'update', 'ProfileController@update')->name('.update');
-    });
-});
-
-Route::namespace('Enterprise')->name('enterprise')->group(function () {
-    Route::get('enterprise/create', 'RegisterController@create')->name('.create');
-    Route::post('enterprise/store', 'RegisterController@store')->name('.store');
-
-    Route::get('enterprise/{enterprise}', 'ManageController@show')->name('.show');
-    Route::post('enterprise/invite', 'ManageController@invitePeople')->name('.invite');
-});
+//Route::namespace('Dashboard')->name('dashboard')->prefix('dashboard')->middleware('auth')->group(function () {
+//    Route::get('/', 'DashboardController@index');
+//
+//    Route::namespace('Profile')->name('.profile')->prefix('profile')->group(function () {
+//        Route::get('/', 'ProfileController@index');
+////        Route::get('edit', 'ProfileController@edit')->name('.edit');
+//        Route::match(['put', 'patch'], 'update', 'ProfileController@update')->name('.update');
+//    });
+//});
+//
+//Route::namespace('Enterprise')->name('enterprise')->group(function () {
+//    Route::get('enterprise/create', 'RegisterController@create')->name('.create');
+//    Route::post('enterprise/store', 'RegisterController@store')->name('.store');
+//
+//    Route::get('enterprise/{enterprise}', 'ManageController@show')->name('.show');
+//    Route::post('enterprise/invite', 'ManageController@invitePeople')->name('.invite');
+//});
 
 //Route::post('email', function(\Illuminate\Http\Request $request) {
 //    $validator = Validator::make($request->all(), [

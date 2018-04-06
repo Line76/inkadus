@@ -3,6 +3,7 @@
 namespace App;
 
 use Illuminate\Database\Eloquent\Relations\BelongsToMany;
+use Illuminate\Database\Query\Builder;
 use Illuminate\Notifications\Notifiable;
 use Illuminate\Foundation\Auth\User as Authenticatable;
 
@@ -14,6 +15,8 @@ use Illuminate\Foundation\Auth\User as Authenticatable;
  * @property \Carbon\Carbon $created_at
  * @property \Carbon\Carbon $updated_at
  * @property BelongsToMany  $enterprises
+ * @property string         email
+ * @property string         confirmed_token
  */
 class User extends Authenticatable {
     use Notifiable;
@@ -23,14 +26,23 @@ class User extends Authenticatable {
      *
      * @var array
      */
-    protected $fillable = ['first_name', 'last_name', 'email', 'password',];
+    protected $fillable = [
+        'first_name',
+        'last_name',
+        'email',
+        'password',
+        'confirmed_token',
+    ];
 
     /**
      * The attributes that should be hidden for arrays.
      *
      * @var array
      */
-    protected $hidden = ['password', 'remember_token',];
+    protected $hidden = [
+        'password',
+        'remember_token',
+    ];
 
     /**
      * Format the first name attribute
@@ -68,5 +80,17 @@ class User extends Authenticatable {
      */
     public function enterprises() {
         return $this->belongsToMany(Enterprise::class);
+    }
+
+    /**
+     * Retrieve user for confirmation
+     *
+     * @param $query
+     * @param $emall
+     * @param $token
+     * @return mixed
+     */
+    public function scopeWhereConfirmedToken($query, $emall, $token) {
+        return $query->where('email', $emall)->where('confirmed_token', $token);
     }
 }

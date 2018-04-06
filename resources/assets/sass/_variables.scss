@@ -1,6 +1,12 @@
 
+$purple: #682EB6;
+$purple: #662E91;
+
+$primary: $purple;
+
 // Body
-$body-bg: #f5f8fa;
+//$body-bg: #f5f8fa;
+$body-bg: #fff;
 
 // Typography
 $font-family-sans-serif: "Raleway", sans-serif;
@@ -9,3 +15,6 @@ $line-height-base: 1.6;
 
 //Enable gradient
 $enable-gradients: true;
+
+//nav
+$nav-height: 55px;

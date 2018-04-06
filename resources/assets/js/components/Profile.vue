@@ -43,6 +43,9 @@
         isLoading: false
       }
     },
+    mounted() {
+      this.$parent.$on('toggleEdit', () => { this.toggleEditMode() })
+    },
     methods: {
       toggleEditMode() {
         this.isEditing = !this.isEditing
