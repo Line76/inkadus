@@ -6,6 +6,12 @@
  */
 
 require('./bootstrap');
+import FontAwesomeIcon from '@fortawesome/vue-fontawesome'
+import fontawesome from '@fortawesome/fontawesome'
+import brands from '@fortawesome/fontawesome-free-brands'
+import { faSpinner } from '@fortawesome/fontawesome-free-solid'
+
+fontawesome.library.add(brands, faSpinner)
 
 window.Vue = require('vue');
 
@@ -15,8 +21,8 @@ window.Vue = require('vue');
  * or customize the JavaScript scaffolding to fit your unique needs.
  */
 
-Vue.component('example-component', require('./components/ExampleComponent.vue'));
 Vue.component('Profile', require('./components/Profile'))
+Vue.component('FontAwesomeIcon', FontAwesomeIcon);
 
 const app = new Vue({
   el: '#app'

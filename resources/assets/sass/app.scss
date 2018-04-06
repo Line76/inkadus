@@ -12,18 +12,19 @@
 @import "mixins";
 @import "global";
 @import "navbar";
+@import "images";
 
 //Core CSS
 //@import "titles";
 
 //Components
-@import "grids";
+//@import "grids";
 
 
 //Every css of the site
 @import "home";
 
-.navbar-laravel {
-  background-color: #fff;
+.navbar-inkadus {
+  background-color: $primary;
   box-shadow: 0 2px 4px rgba(0, 0, 0, 0.04);
 }
