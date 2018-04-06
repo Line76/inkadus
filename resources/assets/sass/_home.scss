@@ -5,9 +5,12 @@ main.py-4 {
 
 #header {
   margin-top: -$nav-height;
-  text-align: center;
 
-  background-color: #fff;
+  text-align: center;
+  color: #fff;
+
+  background: url('/img/home.png');
+  background-size: cover;
 
   .btn {
     margin-top: 50px;

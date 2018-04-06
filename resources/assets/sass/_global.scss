@@ -18,3 +18,10 @@
 .screen-y-lg {
   width: 1200px;
 }
+
+@media screen and (max-width: 576px) {
+  .screen-y {
+    min-height: 100vh;
+    height: auto;
+  }
+}
