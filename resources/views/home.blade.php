@@ -84,11 +84,11 @@
 </div>
 
 <div class="navbar navbar-dark navbar-inkadus justify-content-center">
-    <a href="https://services.ordre.pharmacien.fr/extranet/Vos-demarches-et-formulaires/Remplacement/Remplacement-A-D-et-E"
-       class="navbar-text mx-5">Modalités de remplacement</a>
+    <a href="http://www.ordre.pharmacien.fr/Communications/Les-actualites/Remplacements-quelles-sont-les-regles-en-vigueur-a-l-hopital-et-a-l-officine"
+       class="navbar-text mx-5" target="_blank">Modalités de remplacement</a>
     <a href="http://www.ordre.pharmacien.fr/index.php/Nos-missions/L-examen-de-la-capacite-a-exercer-la-pharmacie/L-inscription-au-tableau/Officine-Inscription-en-metropole"
-       class="navbar-text mx-5">Modalités d’inscription à l’Ordre</a>
+       class="navbar-text mx-5" target="_blank">Modalités d’inscription à l’Ordre</a>
     <a href="https://www.service-public.fr/professionnels-entreprises/vosdroits/F22542"
-       class="navbar-text mx-5">Info: mise à disposition de main d'oeuvre</a>
+       class="navbar-text mx-5" target="_blank">Info: mise à disposition de main d'oeuvre</a>
 </div>
 @endsection
