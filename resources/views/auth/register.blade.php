@@ -2,7 +2,10 @@
 
 @section('content')
 <div class="container">
-    <p class="text-center my-3 h5">Vous pouvez vous inscrire dès à présent mais vous n'aurez accès aux services que propose inKadus que prochainement</p>
+    <p class="text-center my-4 h5">
+        Bienvenue sur inKadus !
+        <br>Encore un peu de patience, la version alpha sera opérationnelle pour préparer vos recrutements de cet été.
+    </p>
 
     <div class="row justify-content-center">
         <div class="col-md-8">

@@ -52,7 +52,7 @@ return [
     |
     */
 
-    'url' => env('APP_URL', 'http://inkadus.fr'),
+    'url' => env('APP_URL', 'https://inkadus.com'),
 
     /*
     |--------------------------------------------------------------------------

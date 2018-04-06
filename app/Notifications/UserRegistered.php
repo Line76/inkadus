@@ -37,12 +37,12 @@ class UserRegistered extends Notification {
      * @return \Illuminate\Notifications\Messages\MailMessage
      */
     public function toMail($user) {
-        return (new MailMessage)->subject('Confirmation d\'email')
-                                ->line("Bienvenue $user->full_name, l'équipe d'inKadus est heureuse de t'accueillir sur le site. Il ne te reste plus qu'à confirmer ton compte en cliquant sur le bouton ci-dessous:")
-                                ->action('Activer mon compte', route('register.confirm', [
+        return (new MailMessage)->subject('Confirmation d\'email')->line("Bienvenue $user->full_name,")
+                                ->line("L'équipe d'inKadus est heureuse de vous accueillir sur le site. Il ne vous reste plus qu'à confirmer votre compte en cliquant sur le bouton ci-dessous:")
+                                ->action('Confirmer mon compte', route('register.confirm', [
                                     'email' => $user->email,
                                     'token' => $user->confirmed_token
-                                ]))->line('Merci de nous faire confiance !');
+                                ]))->line('Merci pour votre confiance.');
     }
 
     /**
