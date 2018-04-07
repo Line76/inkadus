@@ -39,6 +39,19 @@
 
                     <!-- Right Side Of Navbar -->
                     <ul class="navbar-nav ml-auto">
+                        <li class="nav-item dropdown">
+                            <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                                Liens utile
+                            </a>
+                            <div class="dropdown-menu" aria-labelledby="navbarDropdown">
+                                <a href="http://www.ordre.pharmacien.fr/Communications/Les-actualites/Remplacements-quelles-sont-les-regles-en-vigueur-a-l-hopital-et-a-l-officine"
+                                   class="dropdown-item" target="_blank">Modalités de remplacement</a>
+                                <a href="http://www.ordre.pharmacien.fr/index.php/Nos-missions/L-examen-de-la-capacite-a-exercer-la-pharmacie/L-inscription-au-tableau/Officine-Inscription-en-metropole"
+                                   class="dropdown-item" target="_blank">Modalités d’inscription à l’Ordre</a>
+                                <a href="https://www.service-public.fr/professionnels-entreprises/vosdroits/F22542"
+                                   class="dropdown-item" target="_blank">Info: mise à disposition de main d'oeuvre</a>
+                            </div>
+                        </li>
                         <!-- Authentication Links -->
                         @guest
                             {{--<li><a class="nav-link" href="{{ route('login') }}">{{ __('Login') }}</a></li>--}}
