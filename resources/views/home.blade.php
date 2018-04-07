@@ -19,8 +19,7 @@
 
         <div class="screen-y d-flex align-items-center justify-content-center bg-light">
             <div class="container text-center">
-                <h2 class="h1 mb-3">Qu'est ce que cela vous apporte ?</h2>
-                <h3 class="h4 mb-5"></h3>
+                <h2 class="h1 mb-5">Qu'est ce que cela vous apporte ?</h2>
                 <div class="row">
                     <div class="col-12 col-sm p-3 mx-sm-2 mx-0 my-3 my-sm-0 border rounded">
                         <div class="d-flex flex-column align-items-center justify-content-center mb-4">
