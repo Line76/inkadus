@@ -41,7 +41,7 @@
                     <ul class="navbar-nav ml-auto">
                         <li class="nav-item dropdown">
                             <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-                                Liens utile
+                                Liens utiles
                             </a>
                             <div class="dropdown-menu" aria-labelledby="navbarDropdown">
                                 <a href="http://www.ordre.pharmacien.fr/Communications/Les-actualites/Remplacements-quelles-sont-les-regles-en-vigueur-a-l-hopital-et-a-l-officine"
