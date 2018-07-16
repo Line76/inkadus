@@ -81,6 +81,23 @@
             <h2 class="h1 mb-4">Comment ça marche ?</h2>
             <img src="{{ asset('img/how_works.png') }}" alt="Comment ça marche ?" style="width: 90%; margin: 0 auto;">
         </div>
+
+        <div class="screen-y text-center center center-horizontal bg-light" id="how">
+            <h2 class="h1 mb-4">Que vous soyez pharmacien, préparateur, étudiant, BP…</h2>
+
+            <h3 class="h2">Vous êtes salarié ?</h3>
+
+            <p>Prêtez main forte à une équipe dans leur pharmacie !</p>
+
+            <ul class="text-left" style="list-style: none; font-size: 1.3em;">
+                <li>- Améliorez votre expérience en découvrant une autre entreprise</li>
+                <li>- Gagnez en employabilité</li>
+                <li>- Valorisez vos compétences</li>
+                <li>- Développez votre réseau professionnel</li>
+            </ul>
+
+            <p class="h4">Vous conservez la sécurité de votre contrat de travail et votre feuille de paie habituels.</p>
+        </div>
     </div>
 </div>
 @endsection
