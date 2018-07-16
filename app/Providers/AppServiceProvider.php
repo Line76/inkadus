@@ -14,9 +14,6 @@ class AppServiceProvider extends ServiceProvider {
      * @return void
      */
     public function boot() {
-        //String in database
-        Schema::defaultStringLength(191);
-
         Blade::if('prod', function () {
             return app()->environment('production');
         });

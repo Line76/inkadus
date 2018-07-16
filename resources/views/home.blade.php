@@ -5,9 +5,11 @@
     <div class="row">
         <div class="screen-y" id="header">
             <div class="container center center-horizontal">
-                <h1 class="mb-4">Le premier site de mutualisation de compétences entre professionnels de santé.</h1>
+                <h1 class="mb-4">
+                    Mutualisez vos ressources humaines !
+                </h1>
                 <blockquote class="blockquote">
-                    <p>Gagnez du temps pour vos patients</p>
+                    <p>La mutualisation des ressources humaines facilite les recrutements ponctuels ou en urgence.</p>
                 </blockquote>
                 @auth
                     <a href="{{ route('dashboard') }}" class="btn btn-lg btn-primary">Mon Espace</a>
