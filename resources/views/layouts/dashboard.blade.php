@@ -8,10 +8,9 @@
     <!-- CSRF Token -->
     <meta name="csrf-token" content="{{ csrf_token() }}">
 
-    <title>{{ config('app.name', 'Laravel') }}</title>
+    <title>{{ config('app.name', 'Laravel') }} - Dashboard</title>
 
     <!-- Styles -->
-    {{--<link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">--}}
     <link href="{{ asset('css/dashboard/app.css') }}" rel="stylesheet">
 </head>
 <body>
@@ -22,17 +21,14 @@
         </a>
 
         <ul class="navbar-nav px-3">
-            <li class="nav-item dropdown">
-                <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-                    {{ Auth::user()->fullName }}
-                </a>
-                <div class="dropdown-menu" aria-labelledby="navbarDropdown">
-                    <a class="dropdown-item" href="{{ route('dashboard.profile') }}">Mon profil</a>
-                    <a class="dropdown-item" href="#">Another action</a>
-                    <div class="dropdown-divider"></div>
-                    <a class="dropdown-item" href="#">Something else here</a>
-                </div>
-            </li>
+            <a class="nav-link" href="{{ route('logout') }}"
+               onclick="event.preventDefault();
+                                                     document.getElementById('logout-form').submit();">
+                {{ __('Logout') }}
+            </a>
+            <form id="logout-form" action="{{ route('logout') }}" method="POST" style="display: none;">
+                @csrf
+            </form>
         </ul>
     </nav>
 
@@ -42,17 +38,26 @@
                 <div class="sidebar-sticky">
                     <ul class="nav flex-column">
                         <li class="nav-item">
-                            <a href="{{ route('dashboard') }}" class="nav-link active">
-                                {{--<font-awesome-icon icon="spinner"></font-awesome-icon>--}} Home
+                            <a href="{{--{{ route('dashboard') }}--}}" class="nav-link btn disabled text-left">
+                                <font-awesome-icon icon="home"></font-awesome-icon>
+                                Home
+                                <br>
+                                <span class="badge badge-pill badge-secondary">Prochainement</span>
                             </a>
                         </li>
                         <li class="nav-item">
-                            <a href="{{ route('dashboard.profile') }}" class="nav-link">
+                            <a href="{{ route('dashboard.profile') }}" class="nav-link active">
+                                <font-awesome-icon icon="user"></font-awesome-icon>
                                 Mon compte
                             </a>
                         </li>
                         <li class="nav-item">
-                            <a href="{{ route('enterprise.create') }}" class="nav-link">Enregistrer ma pharmacie</a>
+                            <a href="{{--{{ route('enterprise.create') }}--}}" class="nav-link btn disabled text-left">
+                                <font-awesome-icon icon="save"></font-awesome-icon>
+                                Enregistrer ma pharmacie
+                                <br>
+                                <span class="badge badge-pill badge-secondary">Prochainement</span>
+                            </a>
                         </li>
                     </ul>
 
@@ -63,7 +68,8 @@
                         <ul class="nav flex-column">
                             @foreach($enterprises as $enterprise)
                                 <li class="nav-item">
-                                    <a href="{{ route('enterprise.show', $enterprise) }}" class="nav-link">{{ $enterprise->name }}</a>
+                                    <a href="{{ route('enterprise.show', $enterprise) }}"
+                                       class="nav-link">{{ $enterprise->name }}</a>
                                 </li>
                             @endforeach
                         </ul>

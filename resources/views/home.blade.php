@@ -5,7 +5,9 @@
     <div class="row">
         <div class="screen-y" id="header">
             <div class="container center center-horizontal">
-                <h1 class="mb-4">Mutualisez vos ressources humaines !</h1>
+                <h1 class="mb-4">
+                    Mutualisez vos ressources humaines !
+                </h1>
                 <blockquote class="blockquote">
                     <p>La mutualisation des ressources humaines facilite les recrutements ponctuels ou en urgence.</p>
                 </blockquote>

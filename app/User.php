@@ -83,6 +83,13 @@ class User extends Authenticatable {
     }
 
     /**
+     * @return \Illuminate\Database\Eloquent\Relations\HasMany
+     */
+    public function skills() {
+        return $this->hasMany(Skill::class);
+    }
+
+    /**
      * Retrieve user for confirmation
      *
      * @param $query

@@ -22,7 +22,7 @@ class ManageController extends Controller {
         return view('enterprise.show', compact('enterprise', 'enterprises'));
     }
 
-    public function invitePeople(Request $request) {//TODO improve
+    public function invitePeople(Request $request) {//TODO improve request validation
         $data = $request->all();
 
         $users = $this->createUsersFromRequest($data);

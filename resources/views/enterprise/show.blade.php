@@ -37,6 +37,8 @@
                 </div>
             </div>
         </div>
+
+        <a href="{{ route('offer.create') }}" class="btn btn-primary">Formuler une offre</a>
     </div>
 
     <div class="modal fade" id="invitePeopleModal" tabindex="-1" role="dialog" aria-labelledby="invitePeople" aria-hidden="true">

@@ -13,7 +13,7 @@
 
 .sidebar-sticky {
   position: sticky;
-  top: $navbar-height;
+  //top: $navbar-height;
   height: calc(100vh - #{$navbar-height});
   padding-top: .5rem;
   overflow-x: hidden;
