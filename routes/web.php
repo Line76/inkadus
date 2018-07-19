@@ -29,6 +29,8 @@ Route::namespace('Dashboard')->name('dashboard')->prefix('dashboard')->middlewar
     });
 });
 
+Route::resource('skill', 'SkillController');
+
 Route::namespace('Enterprise')->prefix('enterprise')->name('enterprise')->group(function () {
     Route::get('create', 'RegisterController@create')->name('.create');
     Route::post('store', 'RegisterController@store')->name('.store');
