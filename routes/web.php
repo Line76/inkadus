@@ -26,6 +26,7 @@ Route::namespace('Dashboard')->name('dashboard')->prefix('dashboard')->middlewar
         Route::get('/', 'ProfileController@index');
 //        Route::get('edit', 'ProfileController@edit')->name('.edit');
         Route::match(['put', 'patch'], 'update', 'ProfileController@update')->name('.update');
+        Route::post('type', 'ProfileController@typeStore')->name('.type.store');
     });
 });
 
