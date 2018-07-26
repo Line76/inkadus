@@ -1,6 +1,28 @@
 @extends('layouts.dashboard')
 
 @section('content')
+    @if(!Auth::user()->type)
+    <div class="row">
+        <div class="alert alert-info w-100" role="alert">
+            {!! Form::open(['route' => 'dashboard.profile.type.store', 'class' => 'form-inline']) !!}
+            <div class="col-3">
+                {!! Form::label('type', 'Je suis :') !!}
+            </div>
+
+            <div class="input-group col-9">
+                {!! Form::select('type', $types, null, ['class' => 'form-control text-info']) !!}
+                <div class="input-group-append">
+                    <button type="submit" class="btn btn-sm btn-info">
+                        <font-awesome-icon icon="paper-plane"></font-awesome-icon>
+                    </button>
+                </div>
+            </div>
+            {!! Form::close() !!}
+            {{ $errors->first('type') }}
+        </div>
+    </div>
+    @endif
+
     <div class="border-bottom">
         <h1 class="h2">Mon compte - {{ Auth::user()->fullName }}</h1>
     </div>
@@ -64,7 +86,25 @@
                 </div>
 
                 @foreach(Auth::user()->skills as $skill)
-                    <p>{{ $skill->label }}</p>
+                    <div class="container">
+                        <div class="row">
+                            <div class="col">
+                                <p>{{ $skill->label }}</p>
+                            </div>
+
+                            <div class="col-2 justify-content-end">
+                                {{ Form::open(['route' => ['skill.destroy', $skill], 'method' => 'delete']) }}
+                                <button type="submit" class="btn btn-sm btn-danger">
+                                    <font-awesome-icon icon="trash"></font-awesome-icon>
+                                </button>
+                                {{ Form::close() }}
+                            </div>
+
+                            @if(!$loop->last)
+                                <hr>
+                            @endif
+                        </div>
+                    </div>
                 @endforeach
             </div>
 
