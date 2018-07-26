@@ -5,6 +5,7 @@ namespace App\Http\Controllers;
 use App\Skill;
 use Illuminate\Database\Eloquent\Collection;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\Auth;
 
 class SkillController extends Controller {
     /**
@@ -32,7 +33,9 @@ class SkillController extends Controller {
      * @return \Illuminate\Http\Response
      */
     public function store(Request $request) {
-//        $this->validate($request);
+        $this->validate($request, [
+            'types[]' => 'nullable|array',
+        ]);
 
         $skills = new Collection();
         (new Collection($request->get('skills')))->each(function($skill) use (&$skills) {
@@ -83,6 +86,10 @@ class SkillController extends Controller {
      * @return \Illuminate\Http\Response
      */
     public function destroy($id) {
-        //
+        if(!in_array($id, Auth::user()->skills()->pluck('id')->toArray()))
+            return redirect()->back();
+
+        Skill::destroy($id);
+        return redirect()->back();
     }
 }
