@@ -53,6 +53,7 @@ class RegisterController extends Controller {
             'first_name' => 'required|string|max:191',
             'email'      => 'required|string|email|max:191|unique:users',
             'password'   => 'required|string|min:6|confirmed',
+            'school'     => 'nullable|string|max:255',
         ]);
     }
 
@@ -68,7 +69,8 @@ class RegisterController extends Controller {
             'first_name'      => $data['first_name'],
             'email'           => $data['email'],
             'password'        => Hash::make($data['password']),
-            'confirmed_token' => str_random(60)
+            'confirmed_token' => str_random(60),
+            'school'          => $data['school'],
         ]);
 
         return $user;
